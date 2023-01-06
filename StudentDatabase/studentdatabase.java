@@ -10,7 +10,7 @@ public class StudentDatabase
 	{
 		String url = "jdbc:mysql://localhost:3306/studentdb";
 		String username = "root";
-		String password = "Ameer@2003";
+		String password = "*********";
 		try
 		{
 			con = DriverManager.getConnection(url,username,password);
