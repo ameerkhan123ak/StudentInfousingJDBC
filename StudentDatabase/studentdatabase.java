@@ -86,4 +86,18 @@ public class StudentDatabase
 			con.close();
 		} catch(SQLException e) { System.err.println("Student Info Not Found"); }
 	}
+	public static void UpdateStudentName(int rollno, String name)
+	{
+		connect();
+		String query = "UPDATE student SET sname = ? WHERE rollno = ? ";
+		try
+		{
+			PreparedStatement st = con.prepareStatement(query);
+			st.setInt(2,rollno);
+			st.setString(1, name);
+			int count = st.executeUpdate();
+			System.out.println(count + " row(s) affected");
+			System.out.println("Student Info Updated Successfully");
+		}catch(SQLException e) { e.getMessage();}
+	}
 }
